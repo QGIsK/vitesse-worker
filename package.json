@@ -55,5 +55,10 @@
     "vite-ssg": "0.17.4",
     "vitest": "^0.0.139",
     "vue-tsc": "^0.30.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
   }
 }
