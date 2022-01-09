@@ -39,19 +39,11 @@ async function handleEvent(event) {
     // allow headers to be altered
     const response = new Response(page.body, page)
 
-    // TODO :: Set require-trusted-types-for 'script'
-    const policy
-    = 'default-src "self"; script-src "self"; img-src "self" https://*; child-src "none"; style-src "self"; object-src"none";'
-
     response.headers.set('X-XSS-Protection', '1; mode=block')
     response.headers.set('X-Content-Type-Options', 'nosniff')
     response.headers.set('X-Frame-Options', 'DENY')
     response.headers.set('Referrer-Policy', 'no-referrer')
     response.headers.set('Feature-Policy', 'none')
-    response.headers.set('Service-Worker-Allowed', '/')
-    response.headers.set('Content-Security-Policy', policy)
-    response.headers.set('X-Content-Security-Policy', policy)
-    response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload')
 
     return response
   } catch (e) {
