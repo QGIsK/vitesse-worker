@@ -180,14 +180,17 @@ And you will see the generated file in `dist` that ready to be served.
 
 ### Deploy on Cloudflare Workers
 
-Fill in ur `account_id` ( and `zone_id` if deploying to a domain )
+Fill in ur `account_id` ( and `zone_id` if deploying to a domain ) in `wrangler.toml`
 
+```
+pnpm deploy
+```
+
+#### If you dont have wrangler installed
 ```
 # If you dont have wrangler installed
 pnpm i -g @cloudflare/wrangler # Install it
 wrangler login # Login to Cloudflare
-
-pnpm deploy
 ```
 
 Then your app should be live in no time.
