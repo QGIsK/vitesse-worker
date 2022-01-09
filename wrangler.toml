@@ -2,8 +2,11 @@ name = "vitesse-worktop"
 type = "webpack"
 route = ''
 zone_id = ''
+account_id = ''
 usage_model = ''
 compatibility_flags = []
 workers_dev = true
-site = {bucket = "dist",entry-point = "workers-site"}
 compatibility_date = "2022-01-09"
+
+[site]
+bucket = "./dist"

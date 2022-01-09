@@ -9,7 +9,8 @@
     "test": "vitest",
     "test:e2e": "cypress open",
     "test:unit": "vitest",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "deploy": "npm run build && wrangler publish"
   },
   "dependencies": {
     "@vueuse/core": "^7.5.3",

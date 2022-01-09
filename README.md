@@ -9,7 +9,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 <br>
 
 <p align='center'>
-<a href="https://vitesse.netlify.app/">Live Demo</a>
+<a href="https://vitesse-worktop.qgisk.workers.dev/">Live Demo</a>
 </p>
 
 <br>
@@ -32,6 +32,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - 😃 [Use icons from any icon sets, with no compromise](https://github.com/antfu/unplugin-icons)
 
+
 - 🌍 [I18n ready](./locales)
 
 - 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-md)
@@ -48,7 +49,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
 
-- ☁️ Deploy on Netlify, zero-config
+- ☁️ Deploy to Cloudflare Workeres
 
 <br>
 
@@ -95,7 +96,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - Server-side generation
   - [critters](https://github.com/GoogleChromeLabs/critters) - Critical CSS
-- [Netlify](https://www.netlify.com/) - zero-config deployment
+- [Cloudflare Workers](https://workers.cloudflare.com/) - zero-config deployment
 - [VS Code Extensions](./.vscode/extensions.json)
   - [Vite](https://marketplace.visualstudio.com/items?itemName=antfu.vite) - Fire up Vite server automatically
   - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) - Vue 3 `<script setup>` IDE support
@@ -124,6 +125,7 @@ As this template is strongly opinionated, the following provides a curated list 
 - [vitesse-modernized-chrome-ext](https://github.com/xiaoluoboding/vitesse-modernized-chrome-ext) by [@xiaoluoboding](https://github.com/xiaoluoboding) - ⚡️ Modernized Chrome Extension Manifest V3 Vite Starter Template
 - [vitesse-stackter-clean-architect](https://github.com/shamscorner/vitesse-stackter-clean-architect) by [@shamscorner](https://github.com/shamscorner) - A modular clean architecture pattern in vitesse template
 - [vitesse-enterprise](https://github.com/FranciscoKloganB/vitesse-enterprise) by [@FranciscoKloganB](https://github.com/FranciscoKloganB) - Consistent coding styles regardless of team-size.
+- [vitesse-worker](https://github.com/qgisk/vitesse-worker) by [@QGIsK](https://github.com/QGIsK) - Deploy to Cloudflare workers
 
 ## Try it now!
 
@@ -131,14 +133,14 @@ As this template is strongly opinionated, the following provides a curated list 
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse/generate).
+[Create a repo from this template on GitHub](https://github.com/qgisk/vitesse-worker/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit antfu/vitesse my-vitesse-app
+npx degit qgisk/vitesse-worker my-vitesse-app
 cd my-vitesse-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
@@ -152,6 +154,7 @@ When you use this template, try follow the checklist to update your info properl
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the READMEs and remove routes
+- [ ] Setup Cloudflare config in `wrangler.toml`
 
 And, enjoy :)
 
@@ -175,9 +178,19 @@ pnpm build
 
 And you will see the generated file in `dist` that ready to be served.
 
-### Deploy on Netlify
+### Deploy on Cloudflare Workers
 
-Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
+Fill in ur `account_id` ( and `zone_id` if deploying to a domain )
+
+```
+# If you dont have wrangler installed
+pnpm i -g @cloudflare/wrangler # Install it
+wrangler login # Login to Cloudflare
+
+pnpm deploy
+```
+
+Then your app should be live in no time.
 
 ## Why
 
