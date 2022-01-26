@@ -1,4 +1,4 @@
-name = "vitesse-worktop"
+name = "vitesse-worker"
 type = "webpack"
 route = ''
 zone_id = ''
